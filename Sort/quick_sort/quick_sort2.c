@@ -19,6 +19,7 @@ int partition(int arr[],int l, int h)
 			i++;
 		while(arr[j]>pivot)
 			j--;
+		if(arr[i] == pivot && arr[j] == pivot)	break;//少了这句bug会有Bug，数组中存在两个相同元素时会陷入死循环
 		if(i < j)
 		{
 			printf("i:%d\tj:%d\tswap(%d,%d)\n",i,j,arr[i],arr[j]);
